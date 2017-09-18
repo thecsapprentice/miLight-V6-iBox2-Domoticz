@@ -5,7 +5,7 @@ import socket, sys, urllib2;
 ###################
 ## Configuration ##
 ###################
-IBOX_IP = "192.168.1.18"        # iBox IP address
+IBOX_IP = "10.0.4.28"        # iBox IP address
 UDP_PORT_SEND = 5987            # Port for sending
 UDP_PORT_RECEIVE = 55054        # Port for receiving
 UDP_MAX_TRY = 5                 # Max sending max value is 256
@@ -67,6 +67,8 @@ def iBoxV6Commands(x):
 		"MODE07"         : "31 00 00 08 06 07 00 00 00",
 		"MODE08"         : "31 00 00 08 06 08 00 00 00",
 		"MODE09"         : "31 00 00 08 06 09 00 00 00",
+                "LINK"           : "3D 00 00 08 00 00 00 00 00",
+                "UNLINK"         : "3E 00 00 08 00 00 00 00 00",
 	}.get(x)
 
 
