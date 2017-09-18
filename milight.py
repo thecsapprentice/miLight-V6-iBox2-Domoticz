@@ -149,8 +149,8 @@ for iCount in range(0, UDP_MAX_TRY):
         sockServer.sendto(bytearray.fromhex(START_SESSION), (IBOX_IP, UDP_PORT_SEND))
         dataReceived, addr = sockServer.recvfrom(1024)
         dataResponse = str(dataReceived.encode('hex')).upper()
-        SessionID1 = dataResponse[38:40]
-        SessionID2 = dataResponse[40:42]
+        SessionID1 = dataResponse[38:40] # Since we've converted this to an ascii string, each "byte" takes twice the space,
+        SessionID2 = dataResponse[40:42] # so byte 19 is now 38.
         print "[DEBUG] received session message :", dataResponse
         print "[DEBUG] sessionID1               :", SessionID1
         print "[DEBUG] sessionID2               :", SessionID2
